@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conversion Output</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Conversion Output</h1>
+    <div id="output">
+        <pre>{{ output }}</pre>
+    </div>
+    <form action="{{ url_for('download') }}" method="post">
+        <input type="hidden" name="output" value="{{ output }}">
+        <input type="hidden" name="conversion_type" value="{{ request.form.get('conversion_type') }}">
+        <button type="submit">Download</button>
+    </form>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>JSON Converter</h1>
+    <form action="{{ url_for('convert') }}" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="json_file">Upload JSON File:</label>
+            <input type="file" id="json_file" name="json_file">
+        </div>
+        <div>
+            <label for="json_input">Or Enter JSON Input:</label>
+            <textarea id="json_input" name="json_input" rows="5" cols="50"></textarea>
+        </div>
+        <div>
+            <label for="conversion_type">Select Conversion Type:</label>
+            <select id="conversion_type" name="conversion_type">
+                <option value="xml">XML</option>
+                <option value="csv">CSV</option>
+            </select>
+        </div>
+        <div>
+            <input type="submit" value="Convert">
+        </div>
+    </form>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
